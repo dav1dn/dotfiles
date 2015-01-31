@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/david/Grive/CS61A/homework/hw8'
+let g:netrw_dirhist_2='/etc'
+let g:netrw_dirhist_3='/home/david/.vim'
+let g:netrw_dirhist_4='/home/david/.vim/bundle/vim-notes/misc/notes/shadow'
+let g:netrw_dirhist_5='/home/david/.vim/bundle/vim-notes/misc/notes'
+let g:netrw_dirhist_6='/home/david/.vim/bundle/vim-notes/misc'
+let g:netrw_dirhist_7='/home/david/challenge-me/.git'
