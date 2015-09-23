@@ -82,7 +82,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:indentLine_char = '│'
 let g:notes_directories = ['~/Notes/']
 let g:notes_suffix = '.note'
-
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 set laststatus=2
