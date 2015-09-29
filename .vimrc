@@ -1,8 +1,7 @@
 " .vimrc
 " See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
-
-" For multi-byte character support (CJK support, for example):
-"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
+" " For multi-byte character support (CJK support, for example):
+" "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
        
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -70,21 +69,20 @@ set background=dark " When set to "dark", Vim will try to use colors that look
                     " Any other value is illegal.
  
 set mouse=a         " Enable the use of the mouse.
+set ffs=unix,dos
 
 
 execute pathogen#infect()
 filetype plugin indent on
 syntax on
 let base16colorspace=256
-set t_Co=256
-colorscheme solarized 
+colorscheme base16-default
 let g:neocomplcache_enable_at_startup = 1
 let g:indentLine_char = '│'
 let g:notes_directories = ['~/Notes/']
 let g:notes_suffix = '.note'
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
+let g:indentLine_enabled = 1
 set laststatus=2
 set synmaxcol=300
 " Force saving files that require root permission 
