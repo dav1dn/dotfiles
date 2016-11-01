@@ -1,4 +1,3 @@
-" .vimrc
 " See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
 " " For multi-byte character support (CJK support, for example):
 " "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
@@ -69,21 +68,36 @@ set background=dark " When set to "dark", Vim will try to use colors that look
                     " Any other value is illegal.
  
 set mouse=a         " Enable the use of the mouse.
-set ffs=unix,dos
+set ffs=unix,dos    " Fileformat 
+set encoding=utf-8  " Encoding
 
-
+" Pathogen for plugins
 execute pathogen#infect()
-filetype plugin indent on
-syntax on
+
+" 256 color space
+set t_Co=256
 let base16colorspace=256
 colorscheme base16-default
+
+" Syntax highlighting
+filetype plugin indent on
+syntax on
+
+" Plugin specific options
 let g:neocomplcache_enable_at_startup = 1
-let g:indentLine_char = '│'
-let g:notes_directories = ['~/Notes/']
-let g:notes_suffix = '.note'
+let g:indentLine_char = '|'
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:indentLine_enabled = 1
 set laststatus=2
 set synmaxcol=300
+
 " Force saving files that require root permission 
 cmap w!! w !sudo tee > /dev/null %
+
+" easymotion
+nmap s <Plug>(easymotion-s2)
+
+" relative line numbers in view
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+set rnu
