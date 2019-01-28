@@ -30,7 +30,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'alvan/vim-closetag'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -65,7 +64,6 @@ set hidden
 " Syntax highlighting
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-set list listchars=trail:·
 
 " Plugin specific options
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -98,8 +96,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 
-" relative line numbers in view
-autocmd InsertLeave * :set relativenumber
-set rnu
 
+" relative line numbers in view
+set number
 

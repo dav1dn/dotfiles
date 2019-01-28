@@ -10,7 +10,7 @@ bindkey -e
 zstyle :compinstall filename '/home/david/.zshrc'
 
 export ZSH=$HOME/.oh-my-zsh
-plugins=(git brew tmux catimg common-aliases pip python screen zsh-syntax-highlighting)
+plugins=(git brew tmux catimg common-aliases pip python screen zsh-syntax-highlighting history-substring-search)
 autoload -Uz compinit
 autoload -U promptinit; promptinit
 compinit
@@ -19,7 +19,11 @@ compinit
 ZSH_THEME=""
 
 # plugins
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 
 # load oh-my-zsh
@@ -106,3 +110,11 @@ eval $(thefuck --alias)
 bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+DISABLE_AUTO_TITLE="true"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
