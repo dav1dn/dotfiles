@@ -1,0 +1,63 @@
+"*":
+  "autocomplete-plus":
+    autoActivationDelay: 200
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    moveToCancel: true
+    strictMatching: true
+  "city-lights-ui":
+    fontSize: 12
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "linter-ui-default"
+      "busy-signal"
+      "github"
+      "linter"
+      "linter-eslint"
+      "autocomplete-snippets"
+      "background-tips"
+      "git-diff"
+      "language-c"
+      "spell-check"
+      "pigments"
+    ]
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "limited"
+    themes: [
+      "city-lights-ui"
+      "oceanic-next"
+    ]
+  editor:
+    fontFamily: "Roboto Mono, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  "exception-reporting":
+    userId: "34797424-dee3-47d9-a140-43b467aec302"
+  fonts:
+    fontFamily: "Roboto Mono"
+    preview: "The "
+  hidpi: {}
+  "linter-sass-lint":
+    configFile: "~/.atom/packages/linter-sass-lint/.scss-lint.yml"
+    globalNodePath: "/usr/local"
+    noConfigDisable: true
+  "linter-ui-default":
+    panelHeight: 670
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+  react:
+    enabledForAllJavascriptFiles: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+  zentabs:
+    neverCloseUnsaved: true
+".js.jsx.react.source":
+  editor:
+    softWrapAtPreferredLineLength: true
