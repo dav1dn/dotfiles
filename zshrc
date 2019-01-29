@@ -1,4 +1,4 @@
-# Lines configured by zsh-newuser-install
+#Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -76,22 +76,14 @@ export EDITOR=vim
 export VISUAL=vim
 
 # aliases
-alias screen='TERM=screen-256color screen'
 alias sed=gsed
 alias vim=nvim
 
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_oceanicnext
 
 #source "$HOME/.vim/plugins/gruvbox/gruvbox_256palette.sh"
 #source "$HOME/.vim/plugins/gruvbox/gruvbox_256palette_osx.sh"
-
+source "$HOME/.oh-my-zsh/custom/color_scheme.sh"
 # Android home
-export ANDROID_HOME=/Users/davidnguyen/Library/Android/sdk
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=/Users/davidnguyen/.gem/ruby/2.0.0/bin:$PATH
 
 # npm
 export PATH="$HOME/.npm-packages/bin:$PATH"
@@ -101,11 +93,10 @@ export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 # add to PATH
 export PATH="$NPM_PACKAGES/bin:$PATH"
 
+export PATH="/usr/local/bin:$PATH"
 
 # post omz 
 unsetopt share_history
-
-eval $(thefuck --alias)
 
 bindkey -v
 
@@ -118,3 +109,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+eval "$(pyenv init -)"

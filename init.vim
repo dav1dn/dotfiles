@@ -7,14 +7,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/Users/davidn/.pyenv/versions/2.7.15/bin/python2'
+let g:python3_host_prog = '/Users/davidn/.pyenv/shims/python3'
 
 " plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'Raimondi/delimitmate'
-"Plug 'morhetz/gruvbox'
-"Plug 'chriskempson/base16-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
@@ -29,7 +27,18 @@ Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-jedi'
+  Plug 'wokalski/autocomplete-flow'
+" For func argument completion
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -38,6 +47,7 @@ call plug#end()
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 set completeopt=longest,menuone,preview
+let g:neosnippet#enable_completed_snippet = 1
 
 " appearance
 if (has("termguicolors"))
