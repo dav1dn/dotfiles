@@ -7,8 +7,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/Users/davidn/.pyenv/versions/neovim_py3/bin/python'
+let g:python_host_prog = '/Users/davidn/.pyenv/versions/neovim_py2/bin/python'
 
 " plugins
 call plug#begin('~/.config/nvim/plugins')
